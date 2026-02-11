@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMEA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <!-- Logo -->
+      <img src="images/logo.png" alt="LUMEA Logo" class="h-12">
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-pink-500 font-bold">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+          <li><a href="shop.html" class="hover:text-pink-500">Shop</a></li>
+          <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-pink-100 py-20">
+    <!-- Hero Banner Image -->
+    <img src="images/hero.jpg" alt="LUMEA Hero Banner" class="absolute inset-0 w-full h-full object-cover opacity-30">
+    <div class="container mx-auto text-center relative z-10">
+      <h2 class="text-4xl md:text-5xl font-bold text-pink-700 mb-4 font-serif">Jewelry, Clothes, Perfume & More!</h2>
+      <p class="text-lg md:text-xl text-gray-700 mb-6 font-sans">Discover our unique collection today.</p>
+      <a href="shop.html" class="bg-pink-600 text-white px-6 py-3 rounded-lg hover:bg-pink-700 transition">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Featured Products Preview -->
+  <section class="container mx-auto py-12">
+    <h3 class="text-2xl font-bold text-gray-800 mb-6 font-serif">Featured Products</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 product-grid">
+      <!-- Example Product Cards (replace with dynamic CMS later) -->
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-2">
+        <img src="images/jewelry1.jpg" alt="Gold Necklace" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold text-gray-800">Gold Necklace</h4>
+          <p class="text-gray-600 mt-2">$120</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-2">
+        <img src="images/cloth1.jpg" alt="Red Dress" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold text-gray-800">Red Dress</h4>
+          <p class="text-gray-600 mt-2">$80</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-2">
+        <img src="images/perfume1.jpg" alt="Rose Perfume" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold text-gray-800">Rose Perfume</h4>
+          <p class="text-gray-600 mt-2">$50</p>
+        </div>
+      </div>
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-2">
+        <img src="images/hair1.jpg" alt="Hair Clip Set" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h4 class="text-lg font-semibold text-gray-800">Hair Clip Set</h4>
+          <p class="text-gray-600 mt-2">$25</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-12">
+    <div class="container mx-auto py-6 text-center text-gray-600 font-sans">
+      &copy; 2026 LUMEA. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Optional JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>

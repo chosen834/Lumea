@@ -1,0 +1,97 @@
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - LUMEA</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Optional Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md">
+    <div class="container mx-auto flex justify-between items-center py-4 px-6">
+      <h1 class="text-2xl font-bold text-pink-600">LUMEA</h1>
+      <nav>
+        <ul class="flex space-x-6">
+          <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+          <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+          <li><a href="shop.html" class="hover:text-pink-500 font-bold">Shop</a></li>
+          <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Shop Hero -->
+  <section class="bg-pink-100 py-12">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-pink-700 mb-4">Shop Our Collection</h2>
+      <p class="text-gray-700 text-lg md:text-xl">Jewelry, Clothes, Perfume & Hair Accessories</p>
+    </div>
+  </section>
+
+  <!-- Product Grid -->
+  <section class="container mx-auto py-12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 product-grid">
+      <!-- Product cards will be dynamically inserted here -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t mt-12">
+    <div class="container mx-auto py-6 text-center text-gray-600">
+      &copy; 2026 LUMEA. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- JS: Fetch products.json generated from CMS .yml files -->
+  <script>
+    const productGrid = document.querySelector('.product-grid');
+
+    // Create a product card element
+    function createProductCard(product) {
+      const card = document.createElement('div');
+      card.className = 'bg-white shadow-lg rounded-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:-translate-y-2';
+
+      card.innerHTML = `
+        <img src="${product.image}" alt="${product.name}" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-lg font-semibold text-gray-800">${product.name}</h3>
+          <p class="text-gray-600 mt-2">${product.price}</p>
+          <p class="text-gray-500 mt-1 text-sm">${product.description}</p>
+        </div>
+      `;
+
+      return card;
+    }
+
+    // Load products from products.json
+    async function loadProducts() {
+      try {
+        const response = await fetch('data/products.json');
+        if (!response.ok) throw new Error('Failed to fetch products.json');
+
+        const products = await response.json();
+        products.forEach(product => {
+          productGrid.appendChild(createProductCard(product));
+        });
+      } catch (error) {
+        console.error('Error loading products:', error);
+        productGrid.innerHTML = '<p class="text-center text-red-500 col-span-full">No products available at the moment.</p>';
+      }
+    }
+
+    // Initialize
+    loadProducts();
+  </script>
+</body>
+</html>

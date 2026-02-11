@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main  # default branch of your repository
+
+media_folder: "images"    # where uploaded images go
+public_folder: "/images"  # path used in HTML
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "data/products"  # where product files will live
+    create: true
+    slug: "{{slug}}"          # file name for new products
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
