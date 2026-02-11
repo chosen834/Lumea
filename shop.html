@@ -1,4 +1,35 @@
 
+<header class="bg-white shadow-md">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <img src="images/logo.png" alt="LUMEA Logo" class="h-12">
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+        <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+        <li><a href="shop.html" class="hover:text-pink-500">Shop</a></li>
+        <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+    <!-- Search & Filter Section -->
+<div class="container mx-auto mb-6 flex flex-col md:flex-row justify-between items-center gap-4">
+  <input id="searchInput" type="text" placeholder="Search products..." class="border rounded-lg p-2 flex-1">
+  <select id="categoryFilter" class="border rounded-lg p-2">
+    <option value="">All Categories</option>
+    <option value="Jewelry">Jewelry</option>
+    <option value="Clothes">Clothes</option>
+    <option value="Perfume">Perfume</option>
+    <option value="Hair Accessories">Hair Accessories</option>
+  </select>
+</div>
+
+<!-- Product Grid -->
+<section class="container mx-auto py-12">
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 product-grid">
+    <!-- Product cards will be inserted dynamically here -->
+  </div>
+</section>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">!DOCTYPE html>
